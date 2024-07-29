@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-const PORT = 5173;
+const PORT = 3000;
 
 // app.get("/", (req, res) => {
 //     res.status(200);
@@ -11,7 +11,7 @@ const PORT = 5173;
 app.use(express.json());
 app.use(cors());
 
-app.post("/", (req, res) => {
+app.post("/api", (req, res) => {
     const { name } = req.body;
     res.send(`Welcome ${name}`);
 });
