@@ -5,7 +5,14 @@ import loginroute from "./routes/login.js";
 
 const app = express();
 
-app.use("/", homeroute);
+app.use(
+    "/",
+    (req, res, next) => {
+        console.log("helo");
+        next();
+    },
+    homeroute
+);
 app.use("/", loginroute);
 
 app.listen(3000, () =>
